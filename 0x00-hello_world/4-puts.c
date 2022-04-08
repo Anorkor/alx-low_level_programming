@@ -4,7 +4,7 @@
  * *main - function begins
  * *
  * * Return: function ends
- * */
+ */
 
 int main(void)
 {

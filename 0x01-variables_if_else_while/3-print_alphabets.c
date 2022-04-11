@@ -1,27 +1,24 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- *
- * Return: 0 Always(Succes/Correct)
+ * main - containing all code
+ * Return: zero when successful
  */
+
 int main(void)
-
 {
-	char alphabet;
+	char i;
+	char j;
 
-	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		if (alphabet == 'q')
-			continue;
-
-		else if (alphabet == 'e')
-			continue;
-
-		putchar(alphabet);
+		putchar(i);
 	}
 
+	for (j = 'A'; j <='Z'; j++)
+	{
+		putchar(j);
+	}
 	putchar('\n');
-
 	return (0);
-
 }

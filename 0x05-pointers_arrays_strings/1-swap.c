@@ -1,7 +1,7 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * swap_int - check the code for Holberton School students.
+ * swap_int - check the code
  * @a: variable.
  * @b: variable
  */

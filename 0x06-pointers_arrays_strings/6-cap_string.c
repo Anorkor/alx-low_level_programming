@@ -1,38 +1,34 @@
 #include "main.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
- * cap_string - apitalizes  a string.
- * @str: the string 
- *
- * Return: a pointer to the changed string.
+ * cap_string - check the main code
+ * @n : variable
+ * Return: return
  */
-char *cap_string(char *str)
+
+char *cap_string(char *n)
 {
-	int index = 0;
+int i = 0;
 
-	while (str[index])
-	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-		    str[index - 1] == '\t' ||
-		    str[index - 1] == '\n' ||
-		    str[index - 1] == ',' ||
-		    str[index - 1] == ';' ||
-		    str[index - 1] == '.' ||
-		    str[index - 1] == '!' ||
-		    str[index - 1] == '?' ||
-		    str[index - 1] == '"' ||
-		    str[index - 1] == '(' ||
-		    str[index - 1] == ')' ||
-		    str[index - 1] == '{' ||
-		    str[index - 1] == '}' ||
-		    index == 0)
-			str[index] -= 32;
-
-		index++;
-	}
-
-	return (str);
+while (n[i] != '\0')
+{
+if (n[0] <= 122 && n[0] >= 97)
+{
+n[0] = n[0] - 32;
+}
+if (n[i] == 32 || n[i] == 46 || n[i] == '\t' || n[i] == '\n'
+|| n[i] == 44 || n[i] == 59 || n[i] == '!' || n[i] == '?'
+|| n[i] == '(' || n[i] == ')' || n[i] == '{' || n[i] == '}')
+{
+if (n[i + 1] <= 122 && n[i + 1] >= 97)
+{
+n[i + 1] = n[i + 1] - 32;
+}
+}
+i++;
+}
+return (n);
 }

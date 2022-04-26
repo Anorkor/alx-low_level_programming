@@ -1,28 +1,21 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * _strspn - function
- * @s : pointer to check if the value exists
- * @accept : the value to check for 
- * Return: memory.
+ * _strcmp - Compares the pointers to two strings.
+ * @s1: A pointer to the first string to be compared.
+ * @s2: A pointer to the second string to be compared.
+ *
+ * Return: If str1 < str2, the negative difference of the first unmatched characters.
+ *         If str1 == str2, 0.
+ *         If str1 > str2, the positive difference of the first unmatched characters.
  */
+int _strcmp(char *s1, char *s2)
+{
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
 
-unsigned int _strspn(char *s, char *accept)
-{
-int i, j;
-unsigned int count = 0;
-
-for (i = 0; s[i] != ',' && s[i] != '\n' && s[i] != ' ' ; i++)
-{
-for (j = 0; accept[j] != '\0'; j++)
-{
-if (accept[j] == s[i])
-{
-count++;
-break;
-}
-}
-}
-return (count);
+	return (*s1 - *s2);
 }

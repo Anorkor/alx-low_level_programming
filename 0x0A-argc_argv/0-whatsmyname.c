@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "holberton.h"
+#include "main.h"
 
 /**
   *main - entry
   *@argv : the string from the terminal
-  *@argc : the number of arameters
+  *@argc : the number of parameters
   *Return: 0
   */
 

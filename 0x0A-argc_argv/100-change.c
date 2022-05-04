@@ -1,63 +1,40 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
-#include <ctype.h>
-/**
-  *main - entry
-  *@argv : the string from the terminal
-  *@argc : the number of arameters
-  *Return: 0
-  */
-
-int main(int argc, char const *argv[])
-{
-if (argc != 2)
-{
-printf("Error\n");
-return (-1);
-}
-if (atoi(argv[1]) >= 0)
-{
-int c = 0;
-checker(atoi(argv[1]), c);
-}
-else if (atoi(argv[1]) < 0)
-{
-printf("0\n");
-}
-return (0);
-}
 
 /**
-  * checker - entry function
-  * @c : variable
-  * @b : variable
-  */
-  
-void checker(int c, int b)
+ *main - prints minimum number of coins to make change
+ *@argc: number of arguments passed to the function
+ *@argv: argument vector of pointers to strings
+ *
+ *Return: 0 if no errors, else 1
+ */
+int main(int argc, char *argv[])
 {
-if (c >= 25)
-{
-checker(c - 25, b + 1);
-}
-else if (c >= 10)
-{
-checker(c - 10, b + 1);
-}
-else if (c >= 5)
-{
-checker(c - 5, b + 1);
-}
-else if (c >= 2)
-{
-checker(c - 2, b + 1);
-}
-else if (c >= 1)
-{tom
-checker(c - 1, b + 1);
-}
-else if (c == 0)
-{
-printf("%d\n", b);
-}
+	int a, n = 0, i, t;
+	int c[5] = {25, 10, 5, 2, 1};
+
+	if (argc != 2)
+	{
+		puts("Error");
+		return (1);
+	}
+	a = atoi(argv[1]);
+	if (a <= 0)
+	{
+		puts("0");
+		return (1);
+	}
+	else
+	{
+		for (i = 0; i < 5; i++)
+		{
+			t = a / c[i];
+			a -= t * c[i];
+			n += t;
+			if (a == 0)
+				break;
+		}
+	}
+	printf("%d\n", n);
+	return (0);
 }

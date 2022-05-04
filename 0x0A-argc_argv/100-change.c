@@ -4,9 +4,9 @@
 #include <ctype.h>
 /**
   *main - entry
-  * @argv : the string from the terminal
-  * @argc : the number of parameters
-  * Return: 0
+  *@argv : the string from the terminal
+  *@argc : the number of arameters
+  *Return: 0
   */
 
 int main(int argc, char const *argv[])
@@ -33,7 +33,7 @@ return (0);
   * @c : variable
   * @b : variable
   */
-
+  
 void checker(int c, int b)
 {
 if (c >= 25)
